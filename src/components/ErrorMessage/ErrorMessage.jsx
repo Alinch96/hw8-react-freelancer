@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './ErrorMessage.module.css'
 
 const ErrorMessage = ({ message }) => {
   return (
-    <div>{message || "ErrorMessage"}</div>
+    <div className={styles.errorMessage}>{message || "ErrorMessage"}</div>
   )
 }
 

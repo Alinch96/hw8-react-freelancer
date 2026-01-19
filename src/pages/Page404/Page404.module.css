@@ -7,3 +7,12 @@
   box-shadow: var(--shadow-sm);
   text-align: center;
 }
+
+.title {
+  color: var(--color-danger);
+  margin-bottom: var(--spacing-md);
+}
+
+.buttonContainer {
+  margin-top: var(--spacing-md);
+}

@@ -48,9 +48,9 @@ function TeachersList() {
             )}
           </div>
         )}
-        <ul>
+        <ul className={styles.teachersList}>
           {teachersList.map((teacher) => (
-            <li key={teacher.id}>
+            <li key={teacher.id} className={styles.teachersListItem}>
               <TeacherCard teacher={teacher} onSelect={selectTeacher} />
               <div className={styles.buttonContainer}>
                 <Button color="blue" to={frontRoutes.navigate.teachers.edit(teacher.id)}>Редагувати</Button>

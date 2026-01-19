@@ -1,3 +1,27 @@
 .buttonContainer {
-    display: flex;
+  display: flex;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.successMessage {
+  padding: var(--spacing-md);
+  background-color: #e8f5e9;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.teachersList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.teachersListItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }

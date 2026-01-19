@@ -1,16 +1,18 @@
-header {
+.container {
   background-color: #33a741;
   padding: 10px 0;
 }
+
 .linksList {
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
+  gap: var(--spacing-lg);
 }
 
 .link {
   color: white;
-  margin: 20px;
+  margin: var(--spacing-lg);
+  transition: color 0.2s ease;
 }
 
 .link:hover {
@@ -31,3 +33,4 @@ header {
   height: 2px;
   background-color: orange;
 }
+

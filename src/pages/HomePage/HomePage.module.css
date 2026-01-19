@@ -1,13 +1,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: var(--spacing-lg) auto;
   justify-content: center;
-  align-items:center;
-  border-radius: 8px;
-  padding: 10px 16px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  max-width: 600px;
-  font-family: sans-serif;
+  align-items: center;
+  border-radius: var(--border-radius-md);
+  padding: 10px var(--spacing-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  max-width: var(--max-width-content);
+  font-family: var(--font-family-base);
 }
