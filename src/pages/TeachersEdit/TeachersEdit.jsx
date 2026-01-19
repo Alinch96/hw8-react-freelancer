@@ -5,6 +5,7 @@ import Title from "../../components/Title/Title";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Button from "../../components/buttons/Button";
+import styles from "./TeachersEdit.module.css";
 
 function TeachersEdit() {
   const { id } = useParams();
@@ -39,18 +40,18 @@ function TeachersEdit() {
   }
 
   return <section>
-    <div className="container">
+    <div className={styles.container}>
       <Title>{isEdit ? 'Редагувати вчителя' : 'Додати нового вчителя'}</Title>
       {isLoading && <Loader/>}
       {error && <ErrorMessage message={error}/>}
-      {teacherData && <form onSubmit={handleSubmit}>
-        <div><label htmlFor={nameId}>Ім'я:</label>
+      {teacherData && <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.formGroup}><label htmlFor={nameId}>Ім'я:</label>
         <input id={nameId} name="name" value={teacherData.name} onChange={handleTeacherChange} /></div>
-        <div><label htmlFor={subjId}>Предмет:</label>
+        <div className={styles.formGroup}><label htmlFor={subjId}>Предмет:</label>
         <input id={subjId} name="subject" value={teacherData.subject} onChange={handleTeacherChange} /></div>
-        <div><label htmlFor={photoId}>Фото: </label>
+        <div className={styles.formGroup}><label htmlFor={photoId}>Фото: </label>
         <input id={photoId} name="photo" value={teacherData.photo} onChange={handleTeacherChange} /></div>
-        <div className="buttonContainer">
+        <div className={styles.buttonContainer}>
           <Button type="submit" disabled={isBtnDisabled}>{submitBtnText}</Button>
           <Button color="gray" onClick={isEdit ? () => fetchTeacher(id) : () => setTeacherData({name: '', subject: '', photo: ''})}>{cancelBtnText}</Button>
         </div>

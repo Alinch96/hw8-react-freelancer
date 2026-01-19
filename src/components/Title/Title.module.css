@@ -1,4 +1,5 @@
 .title {
-    color: #2e7d32;
-    text-size: 2rem;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-2xl);
+  text-align: center;
 }

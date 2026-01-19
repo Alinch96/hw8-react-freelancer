@@ -5,7 +5,7 @@ import { memo } from "react";
 function TeacherCard({ teacher, onSelect }) {
   return (
     <div className={clsx(styles.container, teacher.isSelected && onSelect && styles.selected)}>
-      <div className={styles.section1}>
+      <div className={styles.sectionOne}>
         <img src={teacher.photo} alt="teacher" />
         <div className={styles.info}>
           <div>{teacher.name}</div>
@@ -14,7 +14,7 @@ function TeacherCard({ teacher, onSelect }) {
           </div>
         </div>
       </div>
-      <div className={styles.section2}>
+      <div className={styles.sectionTwo}>
         {onSelect && (
           <Button
             color={teacher.isSelected  ? "green" : "blue"}

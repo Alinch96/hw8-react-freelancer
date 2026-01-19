@@ -1,18 +1,18 @@
 .container {
   display: flex;
-  margin: 20px;
+  margin: var(--spacing-lg);
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #a5d6a7; /* світло-зелений */
-  border-radius: 8px;
-  padding: 26px 16px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 2px solid #a5d6a7;
+  border-radius: var(--border-radius-md);
+  padding: 26px var(--spacing-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
   max-width: 500px;
-  font-family: sans-serif;
+  font-family: var(--font-family-base);
 }
 
-.section1 {
+.sectionOne {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -24,44 +24,41 @@
   gap: 12px;
 }
 
-.section1 img {
+.sectionOne img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #4caf50; /* зелена рамка */
-}
-.selected {
-  background-color: #c8e6c9; /* дуже світло-зелений фон для вибраного вчителя */
+  border: 2px solid var(--color-primary);
 }
 
 .selected {
-  border-color: #2e7d32; /* темно-зелений бордер для вибраного вчителя */
+  background-color: #c8e6c9;
+  border-color: var(--color-primary-dark);
 }
 
 .selected img {
-  border-color: #1b5e20; /* темно-зелений бордер для фото вибраного вчителя */
+  border-color: #1b5e20;
 }
 
-.section1 div > div:first-child {
+.sectionOne div > div:first-child {
   font-weight: bold;
-  color: #388e3c; /* темно-зелений */
-  font-size: 16px;
+  color: #388e3c;
+  font-size: var(--font-size-base);
 }
 
-.section1 div > div:last-child {
-  color: #757575; /* сірий */
-  font-size: 14px;
+.sectionOne div > div:last-child {
+  color: #757575;
+  font-size: var(--font-size-sm);
 }
 
-.section1 div > div:last-child::before {
+.sectionOne div > div:last-child::before {
   content: '';
   font-weight: bold;
   color: #424242;
 }
 
-
-
-.section2 button:hover {
+.sectionTwo button:hover {
   background-color: #388e3c;
 }
+

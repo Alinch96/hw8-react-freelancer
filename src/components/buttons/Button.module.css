@@ -2,24 +2,41 @@
   color: white;
   border: none;
   padding: 6px 14px;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .green {
-  background-color: #4caf50;
+  background-color: var(--color-primary);
+}
+
+.green:hover {
+  background-color: var(--color-primary-dark);
 }
 
 .blue {
-  background-color: #2196f3;
+  background-color: var(--color-secondary);
+}
+
+.blue:hover {
+  background-color: #1976d2;
 }
 
 .red {
-  background-color: #f44336;
+  background-color: var(--color-danger);
+}
+
+.red:hover {
+  background-color: #d32f2f;
 }
 
 .gray {
-    background-color:rgb(114, 113, 119);
+  background-color: var(--color-neutral);
+}
+
+.gray:hover {
+  background-color: rgb(90, 89, 94);
 }
 
