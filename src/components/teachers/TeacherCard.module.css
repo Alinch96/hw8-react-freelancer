@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #a5d6a7; /* світло-зелений */
+  border-radius: 8px;
+  padding: 26px 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  font-family: sans-serif;
+}
+
+.section1 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section1 img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4caf50; /* зелена рамка */
+}
+.selected {
+  background-color: #c8e6c9; /* дуже світло-зелений фон для вибраного вчителя */
+}
+
+.selected {
+  border-color: #2e7d32; /* темно-зелений бордер для вибраного вчителя */
+}
+
+.selected img {
+  border-color: #1b5e20; /* темно-зелений бордер для фото вибраного вчителя */
+}
+
+.section1 div > div:first-child {
+  font-weight: bold;
+  color: #388e3c; /* темно-зелений */
+  font-size: 16px;
+}
+
+.section1 div > div:last-child {
+  color: #757575; /* сірий */
+  font-size: 14px;
+}
+
+.section1 div > div:last-child::before {
+  content: '';
+  font-weight: bold;
+  color: #424242;
+}
+
+
+
+.section2 button:hover {
+  background-color: #388e3c;
+}
