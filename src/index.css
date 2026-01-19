@@ -1,4 +1,4 @@
-*, ::before, ::after {
+/* *, ::before, ::after {
   box-sizing: border-box;
 }
 
@@ -16,5 +16,5 @@ body {
 .title {
   color: green;
   text-align: center;
-}
+} */
 

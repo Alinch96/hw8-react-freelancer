@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: var(--spacing-lg) auto;
+  margin: var(--spacing-lg);
   justify-content: center;
   align-items: center;
   border-radius: var(--border-radius-md);
@@ -10,4 +10,10 @@
   box-shadow: var(--shadow-sm);
   max-width: var(--max-width-content);
   font-family: var(--font-family-base);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
 }

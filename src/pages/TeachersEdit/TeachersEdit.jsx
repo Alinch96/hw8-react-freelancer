@@ -30,20 +30,17 @@ function TeachersEdit() {
 
   const handleSubmit=(e)=> {
     e.preventDefault();
-    console.log('handleSubmit');
     if(isBtnDisabled) return;
     if(isEdit) {updateTeacher(id);
-      
-      console.log('update');
       return;
     } addNewTeacher();
   }
 
   return <section>
     <div className={styles.container}>
-      <Title>{isEdit ? 'Редагувати вчителя' : 'Додати нового вчителя'}</Title>
       {isLoading && <Loader/>}
       {error && <ErrorMessage message={error}/>}
+      <Title>{isEdit ? 'Редагувати вчителя' : 'Додати нового вчителя'}</Title>
       {teacherData && <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}><label htmlFor={nameId}>Ім'я:</label>
         <input id={nameId} name="name" value={teacherData.name} onChange={handleTeacherChange} /></div>

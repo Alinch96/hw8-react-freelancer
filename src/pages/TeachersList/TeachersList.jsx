@@ -35,7 +35,7 @@ function TeachersList() {
       <div className="container">
         {message && <div className={styles.successMessage}>{message}</div>}
         <Title>Список вчителів</Title>
-        {error && <ErrorMessage />}
+        {error && <ErrorMessage message={error}/>}
         {isLoading && <Loader />}
 
         {teachersList.length > 0 && (

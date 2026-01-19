@@ -7,6 +7,7 @@ import Title from "../../components/Title/Title";
 import frontRoutes from "../../routes/frontRoutes";
 import Button from "../../components/buttons/Button";
 import styles from "./Meetings.module.css";
+import clsx from "clsx";
 
 function Meetings() {
   const { data: selectedTeachers, isLoading, error, fetchSelectedTeachers } = useTeachersApi();
@@ -16,10 +17,10 @@ function Meetings() {
 
   return (
     <section>
-      <div className={styles.container}>
+      <div className={clsx('container', styles.container)}>
         <Title>Учасники зборів</Title>
         {isLoading && <Loader/>}
-        {error && <ErrorMessage/>}
+        {error && <ErrorMessage message={error}/>}
         {selectedTeachers.length ? (
           <div>
           <p> {`Список вчителів (${selectedTeachers.length}) для виклику на збори`}</p>
