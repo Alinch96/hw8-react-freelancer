@@ -7,7 +7,7 @@ import styles from "./TeachersList.module.css";
 import Button from "../../components/buttons/Button";
 import Title from "../../components/Title/Title";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import { Link, useLocation } from "react-router";
+import { useLocation } from "react-router";
 
 function TeachersList() {
   const {
