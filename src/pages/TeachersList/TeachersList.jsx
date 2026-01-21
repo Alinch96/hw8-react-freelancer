@@ -7,7 +7,7 @@ import styles from "./TeachersList.module.css";
 import Button from "../../components/buttons/Button";
 import Title from "../../components/Title/Title";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 
 function TeachersList() {
   const {
@@ -16,10 +16,8 @@ function TeachersList() {
     isLoading,
     fetchTeachers,
     selectTeacher,
-    deleteTeacher
+    deleteTeacher,
   } = useTeachersApi();
-
-  console.log("TeachersList render");
 
   useEffect(() => {
     fetchTeachers();
@@ -35,12 +33,14 @@ function TeachersList() {
       <div className="container">
         {message && <div className={styles.successMessage}>{message}</div>}
         <Title>Список вчителів</Title>
-        {error && <ErrorMessage message={error}/>}
+        {error && <ErrorMessage message={error} />}
         {isLoading && <Loader />}
 
         {teachersList.length > 0 && (
           <div className={styles.buttonContainer}>
-            <Button to={frontRoutes.navigate.teachers.add}>Додати нового вчителя</Button>
+            <Button to={frontRoutes.navigate.teachers.add}>
+              Додати нового вчителя
+            </Button>
             {selectedTeachers.length > 0 && (
               <Button color="blue" to={frontRoutes.navigate.meeting}>
                 Викликати {selectedTeachers.length} вчителів на збори
@@ -53,8 +53,16 @@ function TeachersList() {
             <li key={teacher.id} className={styles.teachersListItem}>
               <TeacherCard teacher={teacher} onSelect={selectTeacher} />
               <div className={styles.buttonContainer}>
-                <Button color="blue" to={frontRoutes.navigate.teachers.edit(teacher.id)}>Редагувати</Button>
-                <Button color="red" onClick={() => deleteTeacher(teacher.id)}>Видалити</Button>
+                <Button
+                  color="blue"
+                  to={frontRoutes.navigate.teachers.edit(teacher.id)}
+                  from={location.pathname}
+                >
+                  Редагувати
+                </Button>
+                <Button color="red" onClick={() => deleteTeacher(teacher.id)}>
+                  Видалити
+                </Button>
               </div>
             </li>
           ))}

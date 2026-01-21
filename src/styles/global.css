@@ -7,11 +7,13 @@
   --color-secondary: #2196f3;
   --color-danger: #f44336;
   --color-neutral: rgb(114, 113, 119);
+  --color-accent: orange;
   
   --color-background: rgb(222, 221, 221);
   --color-surface: #ffffff;
   --color-text-primary: rgb(101, 100, 100);
   --color-text-secondary: #888;
+  --color-input-background: rgb(53, 52, 55);
   
   /* Spacing */
   --spacing-xs: 4px;

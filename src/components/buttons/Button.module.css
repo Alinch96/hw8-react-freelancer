@@ -6,13 +6,21 @@
   font-size: var(--font-size-sm);
   cursor: pointer;
   transition: background-color 0.2s ease;
+  align-self: flex-start;
 }
+
+
 
 .green {
   background-color: var(--color-primary);
 }
 
-.green:hover {
+.orange {
+  background-color: var(--color-accent);
+}
+
+
+.green:hover:not(.disabled) {
   background-color: var(--color-primary-dark);
 }
 
@@ -20,7 +28,7 @@
   background-color: var(--color-secondary);
 }
 
-.blue:hover {
+.blue:hover:not(.disabled) {
   background-color: #1976d2;
 }
 
@@ -28,7 +36,7 @@
   background-color: var(--color-danger);
 }
 
-.red:hover {
+.red:hover:not(.disabled) {
   background-color: #d32f2f;
 }
 
@@ -36,7 +44,7 @@
   background-color: var(--color-neutral);
 }
 
-.gray:hover {
+.gray:hover:not(.disabled) {
   background-color: rgb(90, 89, 94);
 }
 

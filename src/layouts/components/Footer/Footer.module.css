@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-color: rgb(53, 52, 55);
+  background-color: var(--color-input-background);
   color: white;
   text-align: center;
   height: 200px;

@@ -2,21 +2,34 @@ import axios from 'axios'
 import { useCallback, useState } from 'react'
 import apiRoutes from '../api/apiRoutes'
 import { useNavigate } from 'react-router'
-import frontRoutes from '../routes/frontRoutes'
+
+
+const INITIAL_TEACHER_DATA = {
+  name: '',
+  subject: '',
+  photo: '',
+  isSelected: false,
+  position: "",
+  phone: "",
+  email: "",
+  classTeacherOf: "",
+  cabinet: ""
+}
 
 const useTeachersApi = () => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [teacherData, setTeacherData] = useState({name: '', subject: '', photo: ''});
-  const navigate = useNavigate();
+  const [teacherData, setTeacherData] = useState(INITIAL_TEACHER_DATA);
+
+  const navigate = useNavigate()
   
 const apiWrapper = useCallback((callback) => {
-    return (id)=> {
+    return (...args)=> {
     setIsLoading(true)
     setError(null)
     try {
-      callback(id);
+      callback(...args);
     }catch (e) {
       setError(e.response?.data?.message || e.message)
     }finally {
@@ -41,17 +54,8 @@ const apiWrapper = useCallback((callback) => {
   }, [])
 
   const fetchTeacher = useCallback(async(id)=> {
-    setIsLoading(true);
-    setError(null);
-    try {
       const {data} = await axios.get(apiRoutes.selectTeacherById(id));
       setTeacherData(data);
-    }catch(e) {
-      setTeacherData(null);
-      setError(e.message);
-    } finally {
-      setIsLoading(false)
-    }
   }, [])
 
   const deleteTeacher = useCallback(async(id)=> {
@@ -59,15 +63,15 @@ const apiWrapper = useCallback((callback) => {
       setData(teachers=> teachers.filter(t=> t.id!==id));
   }, [])
   
-  const updateTeacher = useCallback(async(id)=> {
+  const updateTeacher = useCallback(async(id, to)=> {
       await axios.put(apiRoutes.selectTeacherById(id), teacherData);
-      navigate(frontRoutes.navigate.teachers.root, { replace: true, state: { message: `Вчитель ${teacherData.name} оновлений успішно` } });
-  }, [navigate, teacherData])
+      navigate(to, {state: { message: `Вчитель ${teacherData.name}  оновлений успішно` } });
+  }, [teacherData, navigate])
   
   const addNewTeacher = useCallback(async()=> {
       await axios.post(apiRoutes.addTeacher, teacherData);
-      navigate(frontRoutes.navigate.teachers.root, { replace: true, state: { message: `Вчитель ${teacherData.name} доданий успішно` } });
-  }, [navigate, teacherData])
+      navigate("/teachers", {state: { message: `Вчитель ${teacherData.name} доданий успішно` } });
+  }, [ teacherData, navigate])
 
   const handleTeacherChange = useCallback(e => {
     const {name, value} = e.target;
@@ -81,7 +85,7 @@ const apiWrapper = useCallback((callback) => {
     fetchTeachers: useCallback(apiWrapper(fetchTeachers), [apiWrapper, fetchTeachers]),
     selectTeacher: useCallback(apiWrapper(selectTeacher), [apiWrapper, selectTeacher]),
     fetchSelectedTeachers: useCallback(apiWrapper(fetchSelectedTeachers), [apiWrapper, fetchSelectedTeachers]),
-    fetchTeacher,
+    fetchTeacher: useCallback(apiWrapper(fetchTeacher), [apiWrapper, fetchTeacher]),
     deleteTeacher: useCallback(apiWrapper(deleteTeacher), [apiWrapper, deleteTeacher]),
     updateTeacher: useCallback(apiWrapper(updateTeacher), [apiWrapper, updateTeacher]),
     addNewTeacher: useCallback(apiWrapper(addNewTeacher), [apiWrapper, addNewTeacher]),

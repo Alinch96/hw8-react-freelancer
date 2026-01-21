@@ -1,9 +1,112 @@
 .container {
-  max-width: var(--max-width-content);
-  margin: 0 auto;
-  padding: var(--spacing-lg);
-  background-color: var(--color-surface);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  margin: var(--spacing-lg);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+.successMessage {
+  padding: var(--spacing-md);
+  background-color: #e8f5e9;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
   text-align: center;
+}
+
+.selected {
+  border: 2px solid #1976d2;
+  background-color: #f5f9ff;
+}
+
+.sectionOne {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.subject,
+.position,
+.classTeacher {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.value {
+  font-weight: 500;
+  color: #333;
+  margin-left: 4px;
+}
+
+.sectionTwo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.contactInfo {
+  flex: 1;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #666;
+}
+
+.contactText {
+  color: #555;
+}
+
+.buttonContainer {
+  margin-top: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .sectionTwo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
 }
